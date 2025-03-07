@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="64"
+   height="64"
+   viewBox="0 0 64 64"
+   sodipodi:docname="line.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="4.1376795"
+     inkscape:cx="-39.877424"
+     inkscape:cy="29.364285"
+     inkscape:window-width="1920"
+     inkscape:window-height="949"
+     inkscape:window-x="1920"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1">
+    <sodipodi:guide
+       position="32.045555,66.363656"
+       orientation="1,0"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="33.580774,58.317757"
+       orientation="0,-1"
+       id="guide2"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="35.950102,10.769681"
+       orientation="0,-1"
+       id="guide3"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1">
+    <path
+       style="fill:#4285f4;stroke:#313131;stroke-width:6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 53.803674,13.690837 11.450626,49.912791"
+       id="path2" />
+    <circle
+       style="fill:#199be2;fill-opacity:1;stroke:none;stroke-width:8.69491;stroke-dasharray:26.0849, 26.0849;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3-9"
+       cx="29.975355"
+       cy="45.453857"
+       r="10.788813"
+       transform="rotate(-40.538333)" />
+    <circle
+       style="fill:#199be2;fill-opacity:1;stroke:none;stroke-width:8.69491;stroke-dasharray:26.0849, 26.0849;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3-9-2"
+       cx="-21.516235"
+       cy="45.048569"
+       r="10.788813"
+       transform="rotate(-40.538333)" />
+  </g>
+</svg>

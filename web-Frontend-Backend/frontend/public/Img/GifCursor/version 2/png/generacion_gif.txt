@@ -1,0 +1,2 @@
+convert -delay 12 gif0.png gif0.png gif1.png gif2.png gif3.png gif5.png gif6.png gif8.png gif9.png gif11.png gif12.png gif14.png gif15.png gif17.png gif18.png gif19.png animation.gif
+

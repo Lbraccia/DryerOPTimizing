@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favICON.ico">
+    <link rel="stylesheet" href="./Style/stylesLight.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- Cargar Leaflet desde un CDN  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css">
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <link rel="shortcut icon" href="#"> -->
+    <!-- Incluir Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Toggle -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>  -->
+
+    <title> Optimization </title>
+  </head>
+  <!-- Animacion del Mouse -->
+  <img id="MouseAnimation" src="/Img/GifCursor/MouseGif.gif" alt="GIF animado" class="hidden"> 
+  <body> 
+
+    <!-- Menu Superior (Global) -->
+    <div id="menuGlobal" >
+      
+      <div
+        style="width: 10%; height:100%; margin: 50px; color:white; display: flex;align-items: center; text-align:center; justify-content: center; margin-left: 10px ;">
+      </div>
+      <div style="width: 80%;"> 
+        <!-- Nombre del Ejemplo -->
+        <!-- <input type="text" style="opacity:0.5; border-radius: 4px;">  -->
+      </div>
+      <!-- Logueo de Usuarios -->
+      <div
+        style="width: 10%; height:100%; color:white; display: flex;align-items: center; text-align:center; justify-content: center;"  onclick="SignIn(event)">
+        <strong> Sign in </strong>
+        <img src="/Img/Icons/person_w.svg" id="SignInButtonImage" style="width:35px; margin-top:5px; margin-bottom:5px; margin-left: 10px; border-radius: 1;"  >
+      </div>
+    </div>
+
+      <div id="container">
+      <!-- Menu Lateral -->
+
+      <div id="containerMenu">
+  
+        <div id="menuTitle" style="width: 100%;"> <strong> Menu </strong> </div>
+  
+        <nav id="menu">
+          <!-- Botones de Acciones-->
+          <div class="AccionesMenu">
+            <div>
+              <button onclick="SelectRed()" class="btn btn-user-active"><img src="Img/Icons/upload_2.svg" id="LoadButtonImage" draggable="false" style="height: 24px;"></button><!-- Load() -->
+              <button onclick="NewRed(event)" class="btn btn-user-active"><img src="Img/Icons/add.svg" id="AddButtonImage"  draggable="false" style="height: 24px;"></button>
+              <button onclick="Setting(event)" class="btn btn-user-active"><img src="Img/Icons/instant_mix_2.svg" id="SettingButtonImage"  draggable="false" style="height: 24px;"></button>
+              <br>
+              <button onclick="DeleteRed(event)" class="btn btn-user-active"><img src="Img/Icons/delete_forever_2.svg" id="DeleteRedButtonImage"  draggable="false" style="height: 24px;"></button>
+              <button onclick="ShowSolution(event)" class="btn btn-user-active"><img src="Img/Icons/assignment_returned_2.svg" id="ShowButtonImage"  draggable="false" style="height: 24px;"></button>
+              <button onclick="openPopupTables(event, false)" class="btn btn-user-active" id="ShowTableSolution" ><img src="Img/Icons/table_lateral.svg" draggable="false" style="height: 24px;"></button> 
+            </div>
+            
+          <div>
+         
+          </div>
+          </div>
+
+        </nav>
+
+
+        <div class="botonera">
+          <!--
+          <button onclick="DGridRun()" id="Runbutton">
+            Run
+          </button>
+          !-->
+          <button onclick="DGridRun()" id="Runbutton" class="btn-user-active"><img src="Img/Icons/play_arrow_w.svg" style="height: 24px;"></button>
+
+
+        </div>
+      </div>
+      <!-- Pop Up de Mensajes -->
+      <div id="Mensajes">
+        <h3 id="TextMensajes"> </h3>
+        <button id="InfoMensajes" onclick="StopCreation()"> Deactivate </button>
+      </div>
+      
+      <div id="containerFramework">
+        <!-- Menu Interior -->
+        <div id="menuFramework">
+          <button class="menuFrameworkBoton btn-user-active" onclick="Copy()">
+            <div class="ContainerImgMenuFramework" style="display: inline-block">
+              <img class="ImgMenuFramework" src="Img/Icons/copy.svg" draggable="false">
+              <div class="NameImgMenuFramework"> Copy </div>
+            </div>
+          </button>
+  
+          <button class="menuFrameworkBoton btn-user-active" onclick="Paste(event)">
+            <div class="ContainerImgMenuFramework" style="display: inline-block">
+              <img class="ImgMenuFramework" src="Img/Icons/paste.svg" draggable="false">
+              <div class="NameImgMenuFramework"> Paste </div>
+            </div>
+          </button>
+  
+          <button class="menuFrameworkBoton btn-user-active" onclick="RotateLeftRight(1)">
+            <div class="ContainerImgMenuFramework" style="display: inline-block">
+              <img class="ImgMenuFramework" src="Img/Icons/rotate_left.svg" draggable="false">
+              <div class="NameImgMenuFramework"> Right </div>
+            </div>
+          </button>
+  
+          <button class="menuFrameworkBoton btn-user-active" onclick="RotateLeftRight(-1)">
+            <div class="ContainerImgMenuFramework" style="display: inline-block">
+              <img class="ImgMenuFramework" src="Img/Icons/rotate_right.svg" draggable="false">
+              <div class="NameImgMenuFramework"> Left </div>
+            </div>
+          </button>
+  
+          <button class="menuFrameworkBoton btn-user-active" onclick="SelectAll(selectedElements, selectedLines)">
+            <div class="ContainerImgMenuFramework" style="display: inline-block">
+              <img class="ImgMenuFramework" src="Img/Icons/select.svg" draggable="false" id="SelectButtonImg">
+              <div class="NameImgMenuFramework"  id="SelectButtonText"> Select All </div>
+            </div>
+          </button>
+
+          <button class="menuFrameworkBoton btn-user-active" onclick="deleteButton(selectedElements)">
+            <div class="ContainerImgMenuFramework" style="display: inline-block">
+              <img class="ImgMenuFramework" src="Img/Icons/delete.svg" draggable="false">               
+              <div class="NameImgMenuFramework" type="submit"> Delete </div>
+            </div>
+          </button>
+        </div>
+
+        <!-- Area de Trabajo -->
+        <div id="framework">
+          <!-- Botones Para ver las soluciones-->
+          <div style="position: absolute; bottom: 0px; left: 0px; display: flex; visibility: hidden; " id="divButtonsShowSoltuion">
+            <!-- Boton para mostrar la estructura-->
+            <button onclick="ShowSolution(event)" class="btn btn-user-active" id="ShowSolution" ><img src="Img/Icons/hub.svg" style="height:27px"></button>
+            <!-- Boton para mostrar tablas y reportes -->
+            <button onclick="openPopupTables(event, true)" class="btn" id="ShowTableSolution" ><img src="Img/Icons/analytics2.svg" style="height:27px"></button>
+            <button onclick="PlayStopAnimation()" class="btn btn-user-active" ><img src="Img/Icons/pause_2.svg" style="height:27px" id="PlayStopAnimation"></button>
+          </div>
+
+
+          <div id='secadora' >
+            <div id="controls-container">
+                <div id="column-controls">
+                    <label for="column-slider">NC:</label>
+                    <input type="number" id="column-input" min="1" max="10" value="3" style="width: 40px;">
+                    <input type="range" id="column-slider" min="1" max="10" value="3">
+                   
+                </div>
+            </div>
+            <br>
+            <div id='contenedorInterior'>
+                <div id="grid-container"></div>
+                <div id="row-controls">
+                    <label for="row-slider">NF:</label>
+                    <input type="number" id="row-input" min="1" max="10" value="4" style="width: 40px;">
+                    <br>
+                    <div id='contenedorInterior2'>
+                        <input type="range" id="row-slider" min="1" max="10" value="4">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>   
+
+  </body>
+  
+  <script> 
+
+
+  </script>
+
+  <!-- Variables Globales --> 
+  <script src="./Js/VariablesComponentes.js"></script>
+
+  <script src="./Js/Botones/GridHandler.js"></script>
+
+  <!-- Eventos al Cargar la Pág -->
+  <script src="./Js/DOMContentLoaded.js"></script>
+
+  <!-- Boton para debuggear-->
+  <script src="./Js/Botones/Prueba.js"></script>
+
+
+  
+</html>

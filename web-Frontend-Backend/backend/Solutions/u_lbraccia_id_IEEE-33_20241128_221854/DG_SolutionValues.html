@@ -1,0 +1,1070 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería de Tablas</title>
+<style>
+#contenedor-tabla {
+  width: 80%;
+  #background-color: #3b3b3b;
+  height: 500px;
+  #border: 1px solid black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  margin-left: 10%;
+  overflow: auto; /* Agregamos scroll si la tabla es muy grande */
+  display: flex;
+  margin: 0 auto;
+  overflow: auto;
+}
+  
+.divtabla {
+  width: 80%;
+  text-align: center;
+  display: none; /* Ocultar todas las tablas por defecto */
+}
+  
+.divtabla.mostrar {
+  #margin-left: 25%;
+  #text-align: left;
+  display: table; /* Mostrar solo la tabla con la clase "mostrar" */
+  position: absolute;
+}
+  
+#anterior, #siguiente {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+  
+#anterior {
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+  
+#siguiente {
+  right: 0;
+  margin-right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  
+}
+.boton {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+}
+  
+#contenedor-tabla2 {
+  width: 80%;
+  #background-color: #3b3b3b;
+  height: 500px;
+  #border: 1px solid black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  margin-left: 10%;
+  overflow: auto; /* Agregamos scroll si la tabla es muy grande */
+  display: flex;
+  margin: 0 auto;
+  overflow: auto;
+}
+  
+.divtabla2 {
+  width: 80%;
+  text-align: center;
+  display: none; /* Ocultar todas las tablas por defecto */
+}
+  
+.divtabla2.mostrar {
+  #margin-left: 25%;
+  #text-align: left;
+  display: table; /* Mostrar solo la tabla con la clase "mostrar" */
+  position: absolute;
+}
+  
+  
+#anterior2, #siguiente2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+  
+#anterior2 {
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+  
+#siguiente2 {
+  right: 0;
+  margin-right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  
+}
+thead{
+  background-color: lightblue;
+  border: 1px solid lightblue;
+}
+
+/* Estilos para cambiar el color de las líneas divisorias del thead */
+table {
+   border-collapse: collapse;
+   width: 80%;
+   display: table;
+   margin: 0 auto;
+}
+  
+th {
+  background-color: lightblue; /* Color de fondo del encabezado */
+  border: 1px solid #ddd; /* Grosor y color de las líneas divisorias */
+  padding: 8px;
+  text-align: left;
+  color: black;
+ }
+  
+ tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de fondo de las filas pares */
+ }
+  
+ tr:hover {
+    background-color: #ddd; /* Color de fondo cuando se pasa el ratón */
+ }    
+</style>
+</head>
+<body>
+
+<div style='width:85%; color: white; background-color: #3b3b3b; font-size: 20px; text-align:center; margin-left:7.5%;'>
+     <strong>Objective Value</strong>
+</div>
+<div style='width:85%; color: black; background-color: white; font-size: 20px; text-align:center; margin-left:7.5%;'>
+    45439.132
+</div>
+<br><br>
+<div style='width:85%; color: white; background-color: #3b3b3b; font-size: 20px; text-align:center; margin-left:7.5%;'>
+     <strong>Active Power Losses</strong>
+</div>
+<div style='width:85%; color: black; background-color: white; font-size: 20px; text-align:center; margin-left:7.5%;'>
+    270.471
+</div>
+<br><br>
+
+<!-- Tabla 1 -->
+<div id="contenedor-tabla">
+    <button id="anterior" class="boton">&lt;</button>
+    <button id="siguiente" class="boton">&gt;</button>
+    
+        <div class="divtabla mostrar">
+            <strong>Periodo: 1</strong>
+            <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Bus</th>
+      <th>Voltage [kV]</th>
+      <th>Voltage [p.u.]</th>
+      <th>Ps [kW]</th>
+      <th>Qs [kW]</th>
+      <th>Pdg [kW]</th>
+      <th>Qdg [kW]</th>
+      <th>PLoad [kW]</th>
+      <th>QLoad [kW]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>N1</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>3033.703793</td>
+      <td>2119.217663</td>
+      <td>--</td>
+      <td>--</td>
+      <td>100.0</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>N2</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>100.0</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>N3</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>90.0</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>N4</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>120.0</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>N5</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>N6</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>N7</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>200.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>N8</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>200.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>N9</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>N10</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>N11</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>45.0</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>N12</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>N13</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>N14</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>120.0</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>N15</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>N16</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>N17</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0 (2) (3)</td>
+      <td>0 (3)</td>
+      <td>60.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>N18</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>90.0</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>N19</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>90.0</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>N20</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>90.0</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>N21</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>90.0</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>N22</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0 (1)</td>
+      <td>0 (1)</td>
+      <td>90.0</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>N23</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>90.0</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>N24</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>420.0</td>
+      <td>200.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>N25</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>420.0</td>
+      <td>200.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>N26</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>N27</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>N28</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>N29</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>120.0</td>
+      <td>70.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>N30</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0 (2)</td>
+      <td>0 (2)</td>
+      <td>200.0</td>
+      <td>600.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>N31</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>150.0</td>
+      <td>70.0</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>N32</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>210.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>N33</td>
+      <td>12.66</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>--</td>
+      <td>--</td>
+      <td>60.0</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Total</td>
+      <td>--</td>
+      <td>--</td>
+      <td>3033.703793</td>
+      <td>2119.217663</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3815.0</td>
+      <td>2360.0</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    
+</div>
+<br><br>
+
+<!-- Tabla 2 -->
+<div id="contenedor-tabla2">
+    <button id="anterior2" class="boton">&lt;</button>
+    <button id="siguiente2" class="boton">&gt;</button>
+    
+        <div class="divtabla2 mostrar">
+            <strong>Periodo: 1</strong>
+            <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>From Bus</th>
+      <th>To Bus</th>
+      <th>I [A]</th>
+      <th>R [kOhms]</th>
+      <th>X [kOhms]</th>
+      <th>Z [kOhms]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>100</td>
+      <td>0.000092</td>
+      <td>0.000047</td>
+      <td>1.034884e-07</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>3</td>
+      <td>100</td>
+      <td>0.000493</td>
+      <td>0.000251</td>
+      <td>5.532632e-07</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4</td>
+      <td>100</td>
+      <td>0.000366</td>
+      <td>0.000186</td>
+      <td>4.107322e-07</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>5</td>
+      <td>100</td>
+      <td>0.000381</td>
+      <td>0.000194</td>
+      <td>4.276821e-07</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>6</td>
+      <td>100</td>
+      <td>0.000819</td>
+      <td>0.000707</td>
+      <td>1.081947e-06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>7</td>
+      <td>100</td>
+      <td>0.000187</td>
+      <td>0.000619</td>
+      <td>6.464962e-07</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>8</td>
+      <td>100</td>
+      <td>0.000711</td>
+      <td>0.000235</td>
+      <td>7.492409e-07</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>9</td>
+      <td>100</td>
+      <td>0.001030</td>
+      <td>0.000740</td>
+      <td>1.268267e-06</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>10</td>
+      <td>100</td>
+      <td>0.001044</td>
+      <td>0.000740</td>
+      <td>1.279662e-06</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>11</td>
+      <td>100</td>
+      <td>0.000197</td>
+      <td>0.000065</td>
+      <td>2.070666e-07</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>12</td>
+      <td>100</td>
+      <td>0.000374</td>
+      <td>0.000124</td>
+      <td>3.943372e-07</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>13</td>
+      <td>100</td>
+      <td>0.001468</td>
+      <td>0.001155</td>
+      <td>1.867900e-06</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>14</td>
+      <td>100</td>
+      <td>0.000542</td>
+      <td>0.000713</td>
+      <td>8.952971e-07</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>15</td>
+      <td>100</td>
+      <td>0.000591</td>
+      <td>0.000526</td>
+      <td>7.911744e-07</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>16</td>
+      <td>100</td>
+      <td>0.000746</td>
+      <td>0.000545</td>
+      <td>9.241151e-07</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>17</td>
+      <td>100</td>
+      <td>0.001289</td>
+      <td>0.001721</td>
+      <td>2.150200e-06</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>18</td>
+      <td>100</td>
+      <td>0.000732</td>
+      <td>0.000574</td>
+      <td>9.302150e-07</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2</td>
+      <td>19</td>
+      <td>100</td>
+      <td>0.000164</td>
+      <td>0.000157</td>
+      <td>2.266898e-07</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>20</td>
+      <td>100</td>
+      <td>0.001504</td>
+      <td>0.001355</td>
+      <td>2.024778e-06</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>21</td>
+      <td>100</td>
+      <td>0.000409</td>
+      <td>0.000478</td>
+      <td>6.297276e-07</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>22</td>
+      <td>100</td>
+      <td>0.000709</td>
+      <td>0.000937</td>
+      <td>1.175190e-06</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>3</td>
+      <td>23</td>
+      <td>100</td>
+      <td>0.000451</td>
+      <td>0.000308</td>
+      <td>5.464708e-07</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>24</td>
+      <td>100</td>
+      <td>0.000898</td>
+      <td>0.000709</td>
+      <td>1.144214e-06</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>25</td>
+      <td>100</td>
+      <td>0.000896</td>
+      <td>0.000701</td>
+      <td>1.137698e-06</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>6</td>
+      <td>26</td>
+      <td>100</td>
+      <td>0.000203</td>
+      <td>0.000103</td>
+      <td>2.278169e-07</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>27</td>
+      <td>100</td>
+      <td>0.000284</td>
+      <td>0.000145</td>
+      <td>3.189165e-07</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>28</td>
+      <td>100</td>
+      <td>0.001059</td>
+      <td>0.000934</td>
+      <td>1.411835e-06</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>29</td>
+      <td>100</td>
+      <td>0.000804</td>
+      <td>0.000701</td>
+      <td>1.066573e-06</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>29</td>
+      <td>30</td>
+      <td>100</td>
+      <td>0.000507</td>
+      <td>0.000258</td>
+      <td>5.695424e-07</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>30</td>
+      <td>31</td>
+      <td>100</td>
+      <td>0.000974</td>
+      <td>0.000963</td>
+      <td>1.369972e-06</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>32</td>
+      <td>100</td>
+      <td>0.000311</td>
+      <td>0.000362</td>
+      <td>4.768457e-07</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>32</td>
+      <td>33</td>
+      <td>100</td>
+      <td>0.000341</td>
+      <td>0.000530</td>
+      <td>6.303912e-07</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    
+</div>
+
+<script>
+    // ------------ Controladores Tabla 1 -------------
+    var tablas = document.querySelectorAll(".divtabla");
+    var indiceActual = 0;
+    var botonAnterior = document.getElementById("anterior");
+    var botonSiguiente = document.getElementById("siguiente");
+    
+    // Función para ocultar todas las tablas excepto la actual
+    function ocultarTablas() {
+        tablas.forEach(function(tabla) {
+        tabla.classList.remove("mostrar");
+        });
+        tablas[indiceActual].classList.add("mostrar");
+    }
+    
+    // Mostrar la tabla actual
+    ocultarTablas();
+    
+    // Evento clic para el botón anterior
+    botonAnterior.addEventListener("click", function() {
+        indiceActual = (indiceActual === 0) ? tablas.length - 1 : indiceActual - 1;
+        ocultarTablas();
+    });
+    
+    // Evento clic para el botón siguiente
+    botonSiguiente.addEventListener("click", function() {
+        indiceActual = (indiceActual === tablas.length - 1) ? 0 : indiceActual + 1;
+        ocultarTablas();
+    });
+    
+    var contenedorTabla = document.getElementById("contenedor-tabla");
+    var botonAnterior = document.getElementById("anterior");
+    var botonSiguiente = document.getElementById("siguiente");
+    
+    function ajustarPosicionBotones() {
+        var scrollTop = contenedorTabla.scrollTop;
+        var scrollLeft = contenedorTabla.scrollLeft;
+        botonAnterior.style.top = scrollTop + contenedorTabla.offsetHeight / 2 + 'px';
+        botonSiguiente.style.top = scrollTop + contenedorTabla.offsetHeight / 2 + 'px';
+        botonSiguiente.style.right = scrollLeft + 'px';
+    }
+    
+    // Ajustar la posición de los botones al cargar la página
+    ajustarPosicionBotones();
+    
+    // Ajustar la posición de los botones al hacer scroll
+    contenedorTabla.addEventListener('scroll', ajustarPosicionBotones);
+    
+    
+    
+    // Coloco los valores en el subheader
+    var tablas = document.querySelectorAll(".divtabla");
+    tablas.forEach(function(tabla) {
+        // Completo los subheader
+        const fila = tabla.querySelector("tr.subheader"); // Selecciona la fila
+        var tds = fila.querySelectorAll("th");
+        const subheader_list_df = ["", "[kV]", "[p.u.]", "[kW]", "[kW]", "[kW]", "[kW]", "[kW]", "[kW]" ];
+        // Recorre el vector y las celdas
+        tds.forEach((td, i) => {
+          td.textContent = subheader_list_df[i];
+        });  
+        // Fijar Header Tabla 1
+        var header = tabla.querySelectorAll("tr.header");
+        for (const celda of header) {
+            celda.style.position = "sticky";
+            celda.style.top = "0";
+            celda.style.zIndex = "1";
+          }
+    });
+    
+    /* 
+    # Elimino el subheader
+    const fila = tabla.querySelector("tr.subheader"); // Selecciona la fila
+    
+    // Elimina la fila de la tabla
+    fila.parentElement.removeChild(fila);
+    */
+    
+    // ------------ Controladores Tabla 2 -------------
+    var tablas2 = document.querySelectorAll(".divtabla2");
+    var indiceActual2 = 0;
+    var botonAnterior2 = document.getElementById("anterior2");
+    var botonSiguiente2 = document.getElementById("siguiente2");
+    
+    // Función para ocultar todas las tablas excepto la actual
+    function ocultarTablas2() {
+        tablas2.forEach(function(tabla) {
+        tabla.classList.remove("mostrar");
+        });
+        tablas2[indiceActual2].classList.add("mostrar");
+    }
+    
+    // Mostrar la tabla actual
+    ocultarTablas2();
+    
+    // Evento clic para el botón anterior2
+    botonAnterior2.addEventListener("click", function() {
+        indiceActual2 = (indiceActual2 === 0) ? tablas2.length - 1 : indiceActual2 - 1;
+        ocultarTablas2();
+    });
+    
+    // Evento clic para el botón siguiente2
+    botonSiguiente2.addEventListener("click", function() {
+        indiceActual2= (indiceActual2 === tablas2.length - 1) ? 0 : indiceActual2 + 1;
+        ocultarTablas2();
+    });
+    
+    var contenedorTabla2 = document.getElementById("contenedor-tabla2");
+    var botonAnterior2 = document.getElementById("anterior2");
+    var botonSiguiente2 = document.getElementById("siguiente2");
+    
+    function ajustarPosicionBotones2() {
+        var scrollTop2 = contenedorTabla2.scrollTop;
+        var scrollLeft2 = contenedorTabla2.scrollLeft;
+        botonAnterior2.style.top = scrollTop2 + contenedorTabla2.offsetHeight / 2 + 'px';
+        botonSiguiente2.style.top = scrollTop2 + contenedorTabla2.offsetHeight / 2 + 'px';
+        botonSiguiente2.style.right = scrollLeft2 + 'px';
+    }
+    
+    // Ajustar la posición de los botones al cargar la página
+    ajustarPosicionBotones2();
+    
+    // Ajustar la posición de los botones al hacer scroll
+    contenedorTabla2.addEventListener('scroll', ajustarPosicionBotones2);
+    
+    // Coloco los valores en el subheader - Tabla 2
+    var tablas2 = document.querySelectorAll(".divtabla2");
+    tablas2.forEach(function(tabla2) {
+        // Completo los subheader
+        const fila2 = tabla2.querySelector("tr.subheader"); // Selecciona la fila
+        var tds2 = fila2.querySelectorAll("th");
+        const subheader_list_df_line = ["From Bus", "To Bus", "I [A]", "R [kOhms]", "X [kOhms]", "Z [kOhms]"];
+        // Recorre el vector y las celdas
+        tds2.forEach((td2, i) => {
+          td2.textContent = subheader_list_df_line[i];
+        });  
+        // Fijar Header Tabla 2
+        var header2 = tabla2.querySelectorAll("tr.header");
+        for (const celda2 of header2) {
+            celda2.style.position = "sticky";
+            celda2.style.top = "0";
+            celda2.style.zIndex = "1";
+          }
+});
+</script>
+</body>
+</html>
